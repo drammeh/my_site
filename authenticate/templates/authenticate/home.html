@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {%extends 'authenticate/base.html'%}
+    {%block content%}
+        <h1>This is just a sample page...</h1>
+
+        {% if request.user.is_authenticated %}
+        <p>Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Password: {{user.password}}</p>
+        {% endif %}
+    {%endblock%}
+</body>
+</html>
